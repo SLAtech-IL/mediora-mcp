@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.json",
-  "name": "io.github.slatech-il/mediora-mcp",
+  "name": "io.github.SLAtech-IL/mediora-mcp",
   "description": "Doctor-reviewed blood-test markers, conditions & symptoms as agent tools. EN/RU/HE. Hosted.",
   "version": "0.5.0",
   "repository": {
