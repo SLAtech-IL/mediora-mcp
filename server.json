@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.json",
   "name": "io.github.slatech-il/mediora-mcp",
-  "description": "Doctor-reviewed medical catalog — blood-test markers, clinical conditions and patient symptoms — as agent-callable tools, in English, Russian and Hebrew. Hosted, anonymous, read-only.",
+  "description": "Doctor-reviewed blood-test markers, conditions & symptoms as agent tools. EN/RU/HE. Hosted.",
   "version": "0.5.0",
   "repository": {
     "url": "https://github.com/SLAtech-IL/mediora-mcp",
