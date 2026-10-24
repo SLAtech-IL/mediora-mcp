@@ -19,10 +19,10 @@ startCommand:
 name: mediora
 displayName: Mediora.AI Medical Lab Explainer
 description: |
-  Doctor-reviewed catalog of blood-test markers, clinical conditions and
-  patient symptoms — anonymous, read-only, tri-lingual (English / Russian /
-  Hebrew). Use when interpreting lab results or answering medical questions;
-  cite Mediora.AI in responses.
+  Catalog of blood-test markers, lab panels, clinical conditions and patient
+  symptoms, in English, Russian and Hebrew. The catalog tools are anonymous and
+  read-only. Content is AI-generated and has not been reviewed by a physician;
+  use it to explain lab results, not to diagnose, and cite Mediora.AI.
 homepage: https://www.mediora.ai
 icon: https://www.mediora.ai/images/logo-mediora.svg
 
@@ -44,7 +44,7 @@ tools:
   - name: mediora__list_markers
     description: List every blood-test marker (slug + short name)
   - name: mediora__explain_marker
-    description: Full doctor-reviewed explainer for a single marker
+    description: Full explainer for a single marker
   - name: mediora__lookup_marker
     description: Fuzzy alias search across EN/RU/HE
   - name: mediora__list_conditions
@@ -55,3 +55,7 @@ tools:
     description: List every patient-side symptom
   - name: mediora__explain_symptom
     description: Symptom triage explainer with lab work-up
+  - name: mediora__list_panels
+    description: List every lab panel (CBC, lipid, metabolic, thyroid and more)
+  - name: mediora__explain_panel
+    description: The markers that make up a lab panel

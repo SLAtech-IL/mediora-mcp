@@ -1,8 +1,8 @@
 # Mediora.AI — MCP Server
 
 A hosted [Model Context Protocol](https://modelcontextprotocol.io) server that
-exposes **Mediora.AI**'s doctor-reviewed medical catalog to AI agents — blood-test
-markers, clinical conditions and patient symptoms — as callable tools, in
+exposes **Mediora.AI**'s medical catalog to AI agents — blood-test markers, lab
+panels, clinical conditions and patient symptoms — as callable tools, in
 **English, Russian and Hebrew**.
 
 - **Endpoint:** `https://mcp.mediora.ai/mcp` (JSON-RPC 2.0 over streamable HTTP)
@@ -30,8 +30,7 @@ Add to your MCP client. For Claude Desktop (`claude_desktop_config.json`):
 ```
 
 No API key is required for the catalog tools. Restart the client and ask, e.g.,
-*"What does a high ferritin mean?"* — the answer comes straight from Mediora's
-doctor-reviewed catalog.
+*"What does a high ferritin mean?"* — the answer comes from Mediora's catalog.
 
 ## Tools
 
@@ -40,8 +39,10 @@ doctor-reviewed catalog.
 | Tool | Returns |
 | --- | --- |
 | `mediora__list_markers` | Every blood-test marker (slug + short name) |
-| `mediora__explain_marker` | Full doctor-reviewed explainer for one marker |
+| `mediora__explain_marker` | Full explainer for one marker |
 | `mediora__lookup_marker` | Fuzzy alias search across EN/RU/HE |
+| `mediora__list_panels` | Every lab panel (CBC, lipid, metabolic, thyroid and more) |
+| `mediora__explain_panel` | The markers that make up one lab panel |
 | `mediora__list_conditions` | Every clinical condition (slug + ICD-10) |
 | `mediora__explain_condition` | Full explainer for a clinical condition |
 | `mediora__list_symptoms` | Every patient-side symptom |
@@ -63,12 +64,13 @@ doctor-reviewed catalog.
   produces a diagnosis or replaces a clinician.
 - **No PHI in the read surface.** The anonymous catalog tools carry no patient data.
   Patient tools require the patient's own JWT and return only that patient's data.
-- **Doctor-reviewed.** Every catalog entry passes a 2-of-3 licensed-physician review
-  before it goes live.
+- **AI-generated, not physician-reviewed.** Catalog content is written with AI and
+  has not been reviewed by a physician. Reference ranges vary between laboratories; the range printed on the
+  patient's own lab report applies.
 
 ## Languages
 
-English · Russian · Hebrew — native interpretation, not machine translation. Pass a
+English · Russian · Hebrew. Russian and Hebrew content is AI-translated. Pass a
 `lang` argument (`en` | `ru` | `he`) to any catalog tool.
 
 ## License
@@ -77,7 +79,3 @@ This repository (manifest + docs) is released under the [MIT License](LICENSE).
 The catalog **content** served by the tools is licensed **CC-BY-NC 4.0** — free to
 use with attribution to **Mediora.AI** (link to https://www.mediora.ai), non-commercial
 unless separately licensed.
-
-## Contact
-
-Editorial: editor@mediora.ai · Privacy/DSAR: privacy@mediora.ai
